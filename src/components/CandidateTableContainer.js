@@ -3,7 +3,7 @@ import CandidateTable from './CandidateTable'
 
 const CandidateTableContainer = (props) =>{
     return (
-        <div>
+        <div class="table-container">
             <CandidateTable data = {props.data}/>
         </div>
     )

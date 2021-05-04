@@ -75,7 +75,7 @@ class CandidateTable extends React.Component{
 
         
         return  (
-            <table>
+            <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>

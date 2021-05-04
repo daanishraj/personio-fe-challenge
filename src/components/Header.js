@@ -1,9 +1,11 @@
 import React from "react"
+import logo from '../imgs/personio_logo.svg'
 
 const Header = ()=>{
     return (
         <div class="container">
-            <h1>Applications</h1>
+             <img src={logo} alt="Logo" />
+            <h1>Applications List</h1>
         </div>
     )
 }
