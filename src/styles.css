@@ -5,7 +5,6 @@
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
- 
 }
 
 .table-container {
@@ -15,7 +14,7 @@
    align-items: center;
 }
 
-.years-experience{
+.years-experience, .age{
   text-align: center;
 }
 
@@ -26,7 +25,7 @@ h1{
 
 }
 .table thead tr {
-  background-color: #74C970;
+  background-color: #0DB5DF;
   color: black;
   text-align: left;
 }
@@ -36,13 +35,11 @@ h1{
     padding: 12px 15px;
 }
 
-
 .table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
 
 .table tbody tr:nth-of-type(even) {
-  /* background-color: #f3f3f3; */
   background-color:#F4F7F9;
 }
 
@@ -59,9 +56,11 @@ img {
   width: 150px;
 }
 
-
-
-/**
-for active state - #0DB5DF
-
-*/
+.sort-button {
+  margin-left: 10px;
+  height: 18px;
+  padding:0px 2px 0px 2px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}

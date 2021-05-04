@@ -30,7 +30,7 @@ const CandidateRow  = (props) =>{
         <tr class= {hover ? "active-row ": ""} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             <td>{candidate.name}</td>
             <td>{candidate.email}</td>
-            <td>{getAge(candidate.birth_date)}</td>
+            <td class="age">{getAge(candidate.birth_date)}</td>
             <td class="years-experience">{candidate.year_of_experience}</td>
             <td>{candidate.position_applied}</td>
             <td>{candidate.application_date}</td>
