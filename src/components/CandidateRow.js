@@ -32,18 +32,18 @@ const CandidateRow  = (props) =>{
     const capitalizedAppStatus = capitalizeFirstLetter(candidate.status)
     
     return (
-        <tr class= {hover ? "active-row ": ""} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+        <tr className= {hover ? "active-row ": ""} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             <td>{candidate.name}</td>
             <td>{candidate.email}</td>
-            <td class="age">{getAge(candidate.birth_date)}</td>
-            <td class="years-experience">{candidate.year_of_experience}</td>
+            <td className="age">{getAge(candidate.birth_date)}</td>
+            <td className="years-experience">{candidate.year_of_experience}</td>
             <td>{candidate.position_applied}</td>
             <td>
                 {candidate.application_date}
-                <div class="subtext">{daysSinceApplication} days ago</div>
+                <div className="subtext">{daysSinceApplication} days ago</div>
             </td>
             <td>
-                <div class={`status ${candidate.status}`}></div>
+                <div className={`status ${candidate.status}`}></div>
                 {capitalizedAppStatus}
             
             </td>

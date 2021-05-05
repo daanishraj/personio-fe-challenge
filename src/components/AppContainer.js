@@ -10,7 +10,7 @@ import CandidateTableContainer from './CandidateTableContainer'
 
 const AppContainer = () => {
         return (
-            <div class="appContainer">
+            <div className="appContainer">q
                 <Header/>
                 <CandidateTableContainer/>
             </div>

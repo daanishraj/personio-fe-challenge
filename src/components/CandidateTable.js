@@ -134,24 +134,24 @@ class CandidateTable extends React.Component{
         }
 
         return  (
-            <table class="table">
+            <table className="table">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Age</th>
                     <th>Years of Experience
-                    <button class="sort-button" onClick={()=>this.setSortInfo("year_of_experience")}>
+                    <button className="sort-button" onClick={()=>this.setSortInfo("year_of_experience")}>
                          {year_of_experience_icon}
                     </button>
                     </th>
                     <th>Position Applied 
-                        <button class="sort-button" onClick={()=>this.setSortInfo("position_applied")}>
+                        <button className="sort-button" onClick={()=>this.setSortInfo("position_applied")}>
                             {position_applied_icon}
                         </button>
                     </th>
                     <th>Application Date
-                    <button class="sort-button" onClick={()=>this.setSortInfo("application_date")}>
+                    <button className="sort-button" onClick={()=>this.setSortInfo("application_date")}>
                         {application_date_icon}
                     </button>
                     </th>

@@ -3,7 +3,7 @@ import logo from '../imgs/personio_logo.svg'
 
 const Header = ()=>{
     return (
-        <div class="container">
+        <div className="container">
              <img src={logo} alt="Logo" />
             <h1>Applications List</h1>
         </div>
