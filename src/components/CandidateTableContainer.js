@@ -1,10 +1,10 @@
 import React from 'react'
 import CandidateTable from './CandidateTable'
 
-const CandidateTableContainer = (props) =>{
+const CandidateTableContainer = (props) => {
     return (
         <div className="table-container">
-            <CandidateTable data = {props.data}/>
+            <CandidateTable data={props.data} />
         </div>
     )
 }

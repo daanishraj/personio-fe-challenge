@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
-const CandidateRow  = (props) =>{
+const CandidateRow = (props) => {
     const candidate = props.candidate
-    
+
     const [hover, setHover] = useState(false)
     const toggleHover = () => {
         return setHover(!hover)
@@ -14,25 +14,24 @@ const CandidateRow  = (props) =>{
     }
 
     const getDaysBetween = (firstDate, secondDate) => {
-        const SINGLE_DAY = 1000*60*60*24
+        const SINGLE_DAY = 1000 * 60 * 60 * 24
         const diffInMs = Math.abs(firstDate - secondDate)
-        return Math.round(diffInMs/SINGLE_DAY);
+        return Math.round(diffInMs / SINGLE_DAY);
     }
-    
-    
-    const capitalizeFirstLetter = (str) =>{
+
+    const capitalizeFirstLetter = (str) => {
         if (str) {
-            return (str.substring(0,1).toUpperCase() + str.substring(1,))
+            return (str.substring(0, 1).toUpperCase() + str.substring(1,))
         } else {
             return "";
         }
     }
 
-    const daysSinceApplication = getDaysBetween(new Date(candidate.application_date),new Date())
+    const daysSinceApplication = getDaysBetween(new Date(candidate.application_date), new Date())
     const capitalizedAppStatus = capitalizeFirstLetter(candidate.status)
-    
+
     return (
-        <tr className= {hover ? "active-row ": ""} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+        <tr className={hover ? "active-row " : ""} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             <td>{candidate.name}</td>
             <td>{candidate.email}</td>
             <td className="age">{getAge(candidate.birth_date)}</td>
@@ -45,12 +44,9 @@ const CandidateRow  = (props) =>{
             <td>
                 <div className={`status ${candidate.status}`}></div>
                 {capitalizedAppStatus}
-            
             </td>
         </tr>
     )
-
-
 }
 
 export default CandidateRow
