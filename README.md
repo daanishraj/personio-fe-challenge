@@ -2,15 +2,16 @@
 This is a simple app created to help Maria, a recruiter at Personio. The app allows the user to access a table of job applicants and sort them by different criteria
 
 
-##How To Bootstrap the App
+## How To Bootstrap the App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 To run this app, clone the repo to your local machine. Then open a terminal window and navigate to the root folder of this project. Then run
 ### `npm start`.
 This will run the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-To execute the unit tests - navigate to the root folder in your terminal window. Then execute ## `npm test`. This will launch the test runner in the interactive watch mode.
+To execute the unit tests - navigate to the root folder in your terminal window. Then execute ### `npm test`. This will launch the test runner in the interactive watch mode.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Below are some further guidelines borrowed directly from the create-react-app official github repo:
 
