@@ -14,20 +14,20 @@
    align-items: center;
 }
 
-.years-experience, .age{
+.years-experience, .age {
   text-align: center;
 }
 
-h1{
+h1 {
   font-family: arial, serif;
   text-align: center;
   font-style: italic;
 
 }
-.table thead tr {
+.table thead tr th {
   background-color: #0DB5DF;
   color: black;
-  text-align: left;
+  text-align: center;
 }
 
 .table th,
@@ -63,4 +63,40 @@ img {
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+.status {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.approved {
+  background-color: #74C970;
+
+}
+
+.rejected {
+  background-color: #EC4A3F;
+}
+
+.waiting {
+  background-color: #FFA319;
+}
+
+.subtext {
+  font-size: 0.8em;
+  margin-top: 8px;
+}
+
+thead tr th {
+  position:sticky;
+  top:0;
+}
+
+.table tbody{
+  overflow:scroll;
+  height:600px;
 }
