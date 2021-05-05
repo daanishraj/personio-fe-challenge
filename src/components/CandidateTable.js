@@ -61,6 +61,18 @@ class CandidateTable extends React.Component{
             })
         }
 
+        getIcon = (columnToSort, colName, sortInfo) =>{
+            if (columnToSort === colName) {
+                if (sortInfo[columnToSort]==="ascending") {
+                    return <FontAwesomeIcon icon = {faSortUp}/>
+                } else if (sortInfo[columnToSort]==="descending") {
+                    return <FontAwesomeIcon icon = {faSortDown}/> 
+                }
+            } 
+            return <FontAwesomeIcon icon = {faSort}/>
+        }
+        
+
     render(){
 
         const dataToSort = [...this.state.data]
@@ -102,36 +114,9 @@ class CandidateTable extends React.Component{
             candidateRows.push(<CandidateRow candidate = {candidate} key={candidate.id}/>)        
         });
         
-        //TODO - Refactor this -  make it more modular
-        const sortIconUp = <FontAwesomeIcon icon = {faSortUp}/>
-        const sortIconDown = <FontAwesomeIcon icon = {faSortDown}/>
-
-        let year_of_experience_icon, position_applied_icon, application_date_icon;
-        year_of_experience_icon = position_applied_icon = application_date_icon = <FontAwesomeIcon icon = {faSort}/>
-
-        if (columnToSort === "year_of_experience") {
-            if (this.state.sortInfo[columnToSort]==="ascending") {
-                year_of_experience_icon = sortIconUp
-            } else if (this.state.sortInfo[columnToSort]==="descending") {
-                year_of_experience_icon = sortIconDown
-            }
-        }
-
-        if (columnToSort === "position_applied") {
-            if (this.state.sortInfo[columnToSort]==="ascending") {
-                position_applied_icon = sortIconUp
-            } else if (this.state.sortInfo[columnToSort]==="descending") {
-                position_applied_icon = sortIconDown
-            }
-        }
-
-        if (columnToSort === "application_date") {
-            if (this.state.sortInfo[columnToSort]==="ascending") {
-                application_date_icon = sortIconUp
-            } else if (this.state.sortInfo[columnToSort]==="descending") {
-                application_date_icon = sortIconDown
-            }
-        }
+        const year_of_experience_icon = this.getIcon(columnToSort, "year_of_experience", this.state.sortInfo)
+        const position_applied_icon = this.getIcon(columnToSort, "position_applied", this.state.sortInfo)
+        const application_date_icon = this.getIcon(columnToSort, "application_date", this.state.sortInfo)
 
         return  (
             <table className="table">
