@@ -14,7 +14,8 @@ class CandidateTable extends React.Component{
                 "position_applied":"default",
                 "application_date":"default"
             },
-            columnToSort:null 
+            columnToSort:null, 
+            shouldSort: false 
         }
     }
         
@@ -55,7 +56,8 @@ class CandidateTable extends React.Component{
                     ...this.state.sortInfo,
                     [colName]:nextSortDirection
                 },
-                columnToSort: colName
+                columnToSort: colName,
+                shouldSort: true
             })
         }
 
@@ -64,10 +66,10 @@ class CandidateTable extends React.Component{
         const dataToSort = [...this.state.data]
         const columnToSort= this.state.columnToSort;
         const sortDirection = this.state.sortInfo[columnToSort];
+        const shouldSort = this.state.shouldSort;
         
-        console.log(columnToSort);
-        
-        if (columnToSort!==null){  
+        if (shouldSort){  //Ensure we do not sort on every render
+            console.log('Now we are sorting!!');
             dataToSort.sort((a, b) => {
                 if (a[columnToSort] < b[columnToSort]) {
                     if (sortDirection === "ascending") {
