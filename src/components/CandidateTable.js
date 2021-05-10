@@ -2,6 +2,7 @@ import React from 'react'
 import CandidateRow from './CandidateRow'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import CandidatesService from '../CandidateList';
 
 class CandidateTable extends React.Component {
     constructor(props) {
@@ -21,13 +22,10 @@ class CandidateTable extends React.Component {
     }
 
     getData = () => {
-        fetch('http://personio-fe-test.herokuapp.com/api/v2/candidates')
-            .then(response => response.json())
-            .then(obj => {
+           CandidatesService().then(list => {
                 this.setState({
-                    data: obj.data
+                    data: list
                 })
-
             });
     }
 
