@@ -69,42 +69,51 @@ class CandidateTable extends React.Component {
         return <FontAwesomeIcon icon={faSort} />
     }
 
+    sortData = (dataToSort, columnToSort, sortDirection) => {
+        dataToSort.sort((a, b) => {
+            if (a[columnToSort] < b[columnToSort]) {
+                if (sortDirection === "ascending") {
+
+                    return -1;
+                } else if (sortDirection === "descending") {
+                    return 1;
+                } else {
+                    //'default' direction
+                    return a;
+                }
+
+            } else if (a[columnToSort] > b[columnToSort]) {
+                if (sortDirection === "ascending") {
+
+                    return 1;
+                } else if (sortDirection === "descending") {
+                    return -1;
+                } else {
+                    //for 'default' direction
+                    return a;
+                }
+            } else {
+                return 0;
+            }
+        })
+
+    }
+
     render() {
         const dataToSort = [...this.state.data]
         const columnToSort = this.state.columnToSort;
         const sortDirection = this.state.sortInfo[columnToSort];
         const shouldSort = this.state.shouldSort;
 
-        if (shouldSort) {  //Ensure we do not sort on every render
-            dataToSort.sort((a, b) => {
-                if (a[columnToSort] < b[columnToSort]) {
-                    if (sortDirection === "ascending") {
+        let sortedData;
 
-                        return -1;
-                    } else if (sortDirection === "descending") {
-                        return 1;
-                    } else {
-                        //'default' direction
-                        return a;
-                    }
-
-                } else if (a[columnToSort] > b[columnToSort]) {
-                    if (sortDirection === "ascending") {
-
-                        return 1;
-                    } else if (sortDirection === "descending") {
-                        return -1;
-                    } else {
-                        //for 'default' direction
-                        return a;
-                    }
-                } else {
-                    return 0;
-                }
-            })
+        if (shouldSort) {  //Ensure we do not sort on every render            
+            sortedData = this.sortData(dataToSort, columnToSort, sortDirection)
+        } else {
+            sortedData = dataToSort;
         }
         const candidateRows = []
-        dataToSort.forEach(candidate => {
+        sortedData.forEach(candidate => {
             candidateRows.push(<CandidateRow candidate={candidate} key={candidate.id} />)
         });
 
