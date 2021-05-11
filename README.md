@@ -1,5 +1,5 @@
 ## About the App
-This is a simple app created to help Maria, a recruiter at Personio. The app allows the user to access a table of job applicants and sort them by different criteria
+This is a simple app created to help Maria, a recruiter. The app allows the user to access a table of job applicants and sort them by different criteria
 
 
 ## How To Bootstrap the App
