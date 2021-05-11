@@ -97,6 +97,7 @@ class CandidateTable extends React.Component {
             }
         })
 
+        return dataToSort;
     }
 
     render() {
