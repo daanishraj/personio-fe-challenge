@@ -48,7 +48,7 @@ h1 {
 }
 
 .table tbody tr.active-row {
-  font-weight: bold;
+  font-style: italic;
   color: #50BB4B;
 }
 
